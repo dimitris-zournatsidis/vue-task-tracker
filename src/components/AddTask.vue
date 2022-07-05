@@ -36,8 +36,9 @@ export default {
         onSubmit() {
             // console.log('submitted!!!');
             if (!this.text) {
-                alert('Please add a task');
-                return
+                // alert('Please add a task');
+                this.$toast.error('Please add a task.');
+                return;
             }
             const newTask = {
                 // id: Math.floor(Math.random() * 100000), // id is now provided by json-server
