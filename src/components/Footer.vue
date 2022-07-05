@@ -1,7 +1,7 @@
 <template>
     <footer>
-        <p>Copyright &copy; 2022</p>
-        <router-link to="/about">About</router-link>
+        <p>Copyright &copy; {{ getCurrentYear() }}</p>
+        <router-link v-show="isAboutPage" to="/about">About</router-link>
     </footer>
 </template>
 
@@ -9,6 +9,20 @@
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: 'Footer',
+    methods: {
+        getCurrentYear() {
+            return new Date().getFullYear();
+        }
+    },
+    computed: {
+        isAboutPage() {
+            if (this.$route.path === '/about') {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
 }
 </script>
 

@@ -10,7 +10,7 @@
       "id": 2,
       "text": "Veterinarian Appointment",
       "day": "April 10th at 5:30pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 3,
