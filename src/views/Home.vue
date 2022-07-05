@@ -1,6 +1,8 @@
 <template>
     <div>
-        <AddTask v-show="showAddTask" @add-task="addTask" />
+        <transition name="slide-fade">
+            <AddTask v-show="showAddTask" @add-task="addTask" />
+        </transition>
         <Tasks :tasks="tasks" @delete-task="deleteTask" @toggle-reminder="toggleReminder" />
     </div>
 </template>
@@ -74,3 +76,17 @@ export default {
     }
 }
 </script>
+
+<style>
+.slide-fade-enter-active {
+  transition: all 0.5s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+</style>

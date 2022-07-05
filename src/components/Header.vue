@@ -14,7 +14,6 @@ export default {
     name: 'Header',
     props: {
         title: String,
-        color: String,
         showAddTask: Boolean,
     },
     components: {
